@@ -4,7 +4,7 @@
   "description": "Assignments for Thailand Code Camp 4",
   "main": "index.js",
   "scripts": {
-    "test": "./activate.sh"
+    "test": "jest src/day1"
   },
   "repository": {
     "type": "git",
