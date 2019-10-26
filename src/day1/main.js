@@ -1,24 +1,20 @@
 function main(str) {
 	// Your code begins here;
-	let a = '('
-	let b = ')'
-	let c = '{'
-	let d = '}'
-	let e = '['
-	let f = ']'
-	//let splitstr = str.split('')
-	function i(x) {
-		if(x = '('){
-		return 1
-		}else {
-			return false
+	
+	let setarray = str.split('((') 	
+	for (i in setarray){
+		if (setarray[i] === '' ){
+			return false;
+		}  
+		}	
+	let setarray2 = str.split('[]')
+	for (i in str){
+		if (setarray2.length === 1 ){
+			return false;
+		} else {
+			return true;
 		}
-	};
-
-	i(a);
-
-	console.log(a>1)
-	//console.log(str)
+	}
 }
 
 module.exports = { main };
