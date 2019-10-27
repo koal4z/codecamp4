@@ -1,20 +1,36 @@
 function main(str) {
 	// Your code begins here;
-	
-	let setarray = str.split('((') 	
-	for (i in setarray){
-		if (setarray[i] === '' ){
-			return false;
-		}  
-		}	
-	let setarray2 = str.split('[]')
-	for (i in str){
-		if (setarray2.length === 1 ){
-			return false;
+	let front = [];
+	let back = [];
+
+	for (i in str) {
+		if (str[i]=== '(' || str[i]=== '{' || str[i]=== '[') {
+			front.push(str[i]);
 		} else {
-			return true;
+			back.push(str[i]);
 		}
 	}
+	if (front.length != back.length){
+		return false
+	}
+	for ( i in str){
+	if(str[i] === '(' && str[i] !== undefined && str[str.length+1-(str.length-i)] !== undefined
+		&&	(str[str.length+1-(str.length-i)] === ']' || str[str.length+1-(str.length-i)] === '}' 
+		)){
+		return false ;
+	} else if (str[i] === '[' && str[i] !== undefined && str[str.length+1-(str.length-i)] !== undefined
+	&&	(str[str.length+1-(str.length-i)] === ')' || str[str.length+1-(str.length-i)] === '}' 
+	)){
+	return false ;
+	} else if(str[i] === '{' && str[i] !== undefined && str[str.length+1-(str.length-i)] !== undefined
+	&&	(str[str.length+1-(str.length-i)] === ']' || str[str.length+1-(str.length-i)] === ')' 
+	)){
+	return false ; 
+	} 
+
+}
+return true;
+	
 }
 
 module.exports = { main };
