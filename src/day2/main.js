@@ -12,10 +12,8 @@ for (let i=0;i<str.length;i++){
 	};
 	arrstr.shift(str[i]);
 	arrstr2.shift(str2[i]);
-
 };
 return sum;
-
 }
 
 module.exports = { main };
